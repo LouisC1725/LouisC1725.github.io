@@ -1,59 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!--The head contains metadata about our page and it's the place where we can load css files (for -->
-<!--styling) and javascript files.-->
 <head>
-
-    <meta name="author" content="Stephan Risi">
+    <meta name="author" content="Louis Cosentini">
     <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Louis Cosentini engineering portfolio featuring projects, skills, and experience.">
 
-    <!-- Load JQuery and Bootstrap. They are javascript library that handle the layouting for us.-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <!--Set the title for the page-->
     <title>Louis Cosentini Portfolio</title>
-
-    <!-- The nav bar remains the same for every page, so by defining it in only one file, we only
-     need to edit it in one place when we make changes to it. -->
-    <script> $(function(){$("#header").load("header.html");});</script>
-
-    <!-- Import the css file, which defines how our website looks -->
+    <script>$(function(){$("#header").load("header.html");});</script>
     <link href="css/main.css" rel="stylesheet">
-
 </head>
-
-
-<!--We define the elements that we actually want to display in the body element-->
 <body>
-
-    <!--This element is a placeholder for the header with the navbar, which we load above-->
     <div id="header"></div>
 
-    <!--a div (for division) defines a section of the page. By giving the div below (which contains-->
-    <!--all of the text the class "column", we can control, for example, how large the borders to the-->
-    <!--left and right of the page should be.-->
-    <div class="column">
-        <!--And with that, we can finally display the actual text on the website:-->
+    <main>
+        <section class="hero-section" id="home">
+            <div class="circuit-layer" aria-hidden="true"></div>
+            <div class="hero-grid page-shell">
+                <div class="hero-copy">
+                    <p class="intro-kicker">Hello, I'm</p>
+                    <h1>Louis <span>Cosentini</span></h1>
+                    <p class="hero-role">Engineering Student &amp; Problem Solver</p>
+                    <p class="hero-summary">I build practical technical projects, document what I learn, and turn coursework into portfolio-ready systems.</p>
+                    <div class="hero-actions">
+                        <a class="primary-button" href="#projects">View My Projects <span aria-hidden="true">&#8594;</span></a>
+                        <a class="secondary-button" href="mailto:louiscosentini@gmail.com"><span aria-hidden="true">&#9993;</span> Contact Me</a>
+                    </div>
+                </div>
 
-        <!--h1 stands for heading 1, the largest kind of header. You can add smaller headings with h2, h3 etc.-->
-        <!--Note: we need to both open (<h1>) and close (</h1>) all of the tags that we use.-->
-﻿       <h1>Welcome To My Portfolio</h1>
+                <div class="hero-visual" aria-label="Engineering workspace portrait area">
+                    <div class="shape shape-orange"></div>
+                    <div class="shape shape-lavender"></div>
+                    <img class="portrait" src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electronics workbench with laptop and circuit components">
+                    <div class="stats-card">
+                        <div class="stat-item">
+                            <span class="stat-icon">&#9889;</span>
+                            <strong>5+</strong>
+                            <span>Projects Built</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">&#10042;</span>
+                            <strong>3+</strong>
+                            <span>Core Skill Areas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">&#8962;</span>
+                            <strong>B.S.</strong>
+                            <span>Engineering Focus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!--p stands for paragraph, the main text building blocks we're working with.-->
-        <p>Hi there! This is the place to see all of the <a href="https://pages.github.com/">Projects</a> and <a href="https://pages.github.com/">course work</a> that I have done.
-            <!-- Here's how links work generally: <a href="website-we-link.to">Clickable link text</a>-->
-            
+        <section class="section-block featured-section" id="projects">
+            <div class="page-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Featured Work</p>
+                    <h2>Projects That Show The Process</h2>
+                    <p>A focused selection of technical work across design, prototyping, coding, and system integration.</p>
+                </div>
 
-            created by <a href="http://web.mit.edu/crystall/www/">Crystal Lee</a> and
-            <a href="http://stanford.edu/~risi/">Stephan Risi</a>. You can also have a look at the
-            <a href="https://github.com/srisi/github_pages_tutorial">underlying Github repository</a>.
-        </p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Close-up of a printed circuit board">
+                        <div class="project-content">
+                            <p class="project-tag">Hardware</p>
+                            <h3>Embedded Systems</h3>
+                            <p>Microcontroller-based builds with attention to power, signals, and clean documentation.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering workstation with equipment">
+                        <div class="project-content">
+                            <p class="project-tag">Design</p>
+                            <h3>Engineering Prototypes</h3>
+                            <p>Concept-to-test workflows for class projects, personal experiments, and functional demos.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electronic components and circuit traces">
+                        <div class="project-content">
+                            <p class="project-tag">Software</p>
+                            <h3>Technical Tools</h3>
+                            <p>Code-driven utilities and interfaces that make analysis, testing, and presentation clearer.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <section class="section-block about-section" id="about">
+            <div class="page-shell two-column">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>Curious, hands-on, and focused on useful outcomes.</h2>
+                </div>
+                <p>I use this portfolio to collect the projects, coursework, and experiments that represent how I approach engineering problems: break down the system, test the assumptions, and communicate the result clearly.</p>
+            </div>
+        </section>
 
-    </div>
+        <section class="section-block skills-section" id="skills">
+            <div class="page-shell">
+                <div class="section-heading compact-heading">
+                    <p class="eyebrow">Skills</p>
+                    <h2>Technical Toolkit</h2>
+                </div>
+                <div class="skill-grid">
+                    <div class="skill-pill">Circuit Analysis</div>
+                    <div class="skill-pill">Prototyping</div>
+                    <div class="skill-pill">Python</div>
+                    <div class="skill-pill">C / C++</div>
+                    <div class="skill-pill">Data Analysis</div>
+                    <div class="skill-pill">Technical Writing</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block experience-section" id="experience">
+            <div class="page-shell experience-panel">
+                <p class="eyebrow">Experience</p>
+                <h2>Built around projects, iteration, and communication.</h2>
+                <p>Use this space for internships, research, coursework, lab work, and independent builds. The structure is ready for real project links as the portfolio grows.</p>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="page-shell contact-panel">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let’s build the next version.</h2>
+                </div>
+                <a class="primary-button" href="mailto:louiscosentini@gmail.com">Email Louis <span aria-hidden="true">&#8594;</span></a>
+            </div>
+        </section>
+    </main>
 </body>
+</html>
