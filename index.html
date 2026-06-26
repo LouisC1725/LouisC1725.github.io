@@ -14,13 +14,117 @@
     <title>Louis Cosentini Portfolio</title>
     <script>$(function(){$("#header").load("header.html");});</script>
     <link href="css/main.css" rel="stylesheet">
+    <style>
+        .circuit-layer {
+            opacity: 0.95;
+            background:
+                radial-gradient(circle at 5% 33%, rgba(255, 104, 26, 0.22) 0 3px, transparent 3.5px),
+                radial-gradient(circle at 13% 24%, rgba(255, 104, 26, 0.16) 0 3px, transparent 3.5px),
+                radial-gradient(circle at 20% 38%, rgba(255, 104, 26, 0.12) 0 2px, transparent 2.5px),
+                radial-gradient(circle at 77% 10%, rgba(255, 104, 26, 0.19) 0 5px, transparent 5.5px),
+                radial-gradient(circle at 90% 49%, rgba(255, 104, 26, 0.18) 0 3px, transparent 3.5px),
+                linear-gradient(90deg, transparent 0 4%, rgba(255, 104, 26, 0.13) 4.1% 22%, transparent 22.1% 100%),
+                linear-gradient(90deg, transparent 0 70%, rgba(255, 104, 26, 0.13) 70.1% 91%, transparent 91.1% 100%),
+                linear-gradient(0deg, transparent 0 18%, rgba(255, 104, 26, 0.10) 18.1% 18.35%, transparent 18.55% 100%),
+                linear-gradient(0deg, transparent 0 54%, rgba(255, 104, 26, 0.10) 54.1% 54.35%, transparent 54.55% 100%),
+                repeating-linear-gradient(90deg, transparent 0 62px, rgba(255, 104, 26, 0.045) 62px 64px, transparent 64px 130px),
+                repeating-linear-gradient(0deg, transparent 0 78px, rgba(255, 104, 26, 0.04) 78px 80px, transparent 80px 158px);
+        }
+
+        .circuit-layer::before,
+        .circuit-layer::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.74;
+        }
+
+        .circuit-layer::before {
+            left: -3vw;
+            top: 28px;
+            width: min(47vw, 620px);
+            height: 220px;
+            background:
+                radial-gradient(circle at 12% 40%, rgba(255, 104, 26, 0.20) 0 4px, transparent 4.5px),
+                radial-gradient(circle at 26% 19%, rgba(255, 104, 26, 0.16) 0 3px, transparent 3.5px),
+                radial-gradient(circle at 39% 57%, rgba(255, 104, 26, 0.15) 0 3px, transparent 3.5px),
+                radial-gradient(circle at 62% 32%, rgba(255, 104, 26, 0.14) 0 3px, transparent 3.5px),
+                radial-gradient(circle at 85% 20%, rgba(255, 104, 26, 0.16) 0 4px, transparent 4.5px),
+                linear-gradient(90deg, transparent 0 10%, rgba(255, 104, 26, 0.16) 10.2% 48%, transparent 48.2% 100%),
+                linear-gradient(90deg, transparent 0 18%, rgba(255, 104, 26, 0.13) 18.2% 74%, transparent 74.2% 100%),
+                linear-gradient(90deg, transparent 0 2%, rgba(255, 104, 26, 0.12) 2.2% 36%, transparent 36.2% 100%),
+                linear-gradient(135deg, transparent 0 27%, rgba(255, 104, 26, 0.11) 27.2% 27.7%, transparent 27.9% 100%),
+                linear-gradient(45deg, transparent 0 33%, rgba(255, 104, 26, 0.12) 33.2% 33.7%, transparent 33.9% 100%);
+            background-size: 100% 34px, 100% 52px, 100% 62px, 100% 42px, 100% 48px, 100% 2px, 100% 2px, 100% 2px, 100% 100%, 100% 100%;
+            background-position: 0 55px, 0 18px, 0 112px, 0 78px, 0 24px, 0 72px, 0 112px, 0 152px, 0 0, 0 0;
+            background-repeat: no-repeat;
+        }
+
+        .circuit-layer::after {
+            right: 5vw;
+            top: 46px;
+            width: min(26vw, 290px);
+            height: 520px;
+            border-radius: 18px;
+            background:
+                linear-gradient(90deg, transparent 0 35%, rgba(255, 104, 26, 0.16) 35.4% 36%, transparent 36.4% 100%),
+                linear-gradient(0deg, transparent 0 17%, rgba(255, 104, 26, 0.13) 17.3% 17.8%, transparent 18.1% 100%),
+                linear-gradient(0deg, transparent 0 63%, rgba(255, 104, 26, 0.13) 63.3% 63.8%, transparent 64.1% 100%),
+                radial-gradient(circle at 18% 17%, rgba(255, 104, 26, 0.20) 0 4px, transparent 4.5px),
+                radial-gradient(circle at 72% 64%, rgba(255, 104, 26, 0.18) 0 3px, transparent 3.5px),
+                repeating-linear-gradient(90deg, transparent 0 18px, rgba(255, 104, 26, 0.12) 18px 20px, transparent 20px 34px),
+                repeating-linear-gradient(0deg, transparent 0 18px, rgba(255, 104, 26, 0.11) 18px 20px, transparent 20px 34px);
+        }
+
+        .circuit-chip {
+            position: absolute;
+            right: 8.5vw;
+            top: 170px;
+            width: 118px;
+            height: 118px;
+            pointer-events: none;
+            opacity: 0.45;
+            border: 2px solid rgba(255, 104, 26, 0.26);
+            border-radius: 12px;
+            background:
+                linear-gradient(90deg, transparent 0 18%, rgba(255, 104, 26, 0.13) 18% 19.5%, transparent 19.5% 80%, rgba(255, 104, 26, 0.13) 80% 81.5%, transparent 81.5% 100%),
+                linear-gradient(0deg, transparent 0 18%, rgba(255, 104, 26, 0.13) 18% 19.5%, transparent 19.5% 80%, rgba(255, 104, 26, 0.13) 80% 81.5%, transparent 81.5% 100%);
+            box-shadow:
+                0 -18px 0 -14px rgba(255, 104, 26, 0.32),
+                0 18px 0 -14px rgba(255, 104, 26, 0.32),
+                18px 0 0 -14px rgba(255, 104, 26, 0.32),
+                -18px 0 0 -14px rgba(255, 104, 26, 0.32);
+        }
+
+        @media (max-width: 991px) {
+            .circuit-layer::before {
+                width: 86vw;
+            }
+
+            .circuit-layer::after,
+            .circuit-chip {
+                opacity: 0.38;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .circuit-layer {
+                opacity: 0.55;
+            }
+
+            .circuit-layer::after,
+            .circuit-chip {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header"></div>
 
     <main>
         <section class="hero-section" id="home">
-            <div class="circuit-layer" aria-hidden="true"></div>
+            <div class="circuit-layer" aria-hidden="true"><span class="circuit-chip"></span></div>
             <div class="hero-grid page-shell">
                 <div class="hero-copy">
                     <p class="intro-kicker">Hello, I'm</p>
