@@ -31,9 +31,276 @@
             display: none;
         }
 
+        .project-showcase {
+            display: grid;
+            gap: 34px;
+        }
+
+        .project-feature {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.78fr);
+            gap: 30px;
+            align-items: stretch;
+            padding: 24px;
+            border: 1px solid rgba(255, 104, 26, 0.14);
+            border-radius: 22px;
+            background: rgba(255, 250, 245, 0.92);
+            box-shadow: 0 22px 46px rgba(84, 52, 26, 0.10);
+        }
+
+        .project-feature:nth-child(even) {
+            grid-template-columns: minmax(330px, 0.78fr) minmax(0, 1.05fr);
+        }
+
+        .project-feature:nth-child(even) .project-media-grid {
+            order: 2;
+        }
+
+        .project-feature:nth-child(even) .project-detail {
+            order: 1;
+        }
+
+        .project-media-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.9fr;
+            grid-template-rows: repeat(2, minmax(150px, 1fr));
+            gap: 14px;
+            min-height: 392px;
+        }
+
+        .project-media-button {
+            position: relative;
+            overflow: hidden;
+            min-width: 0;
+            min-height: 150px;
+            padding: 0;
+            border: 0;
+            border-radius: 16px;
+            background: #1e2433;
+            cursor: zoom-in;
+            box-shadow: 0 14px 28px rgba(32, 38, 56, 0.12);
+        }
+
+        .project-media-button:first-child {
+            grid-row: span 2;
+        }
+
+        .project-media-button img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto;
+            object-fit: cover;
+            transition: transform 180ms ease, filter 180ms ease;
+        }
+
+        .project-media-button:hover img,
+        .project-media-button:focus img {
+            transform: scale(1.035);
+            filter: brightness(0.86);
+        }
+
+        .media-action {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 12px;
+            color: #fff;
+            border-radius: 999px;
+            background: rgba(17, 20, 30, 0.72);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-detail {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            padding: 12px 8px;
+        }
+
+        .project-detail h3 {
+            margin: 8px 0 14px;
+            font-size: clamp(1.8rem, 3vw, 2.65rem);
+            font-weight: 800;
+            line-height: 1.08;
+        }
+
+        .project-detail p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .project-meta div {
+            padding: 14px;
+            border: 1px solid rgba(255, 104, 26, 0.13);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.62);
+        }
+
+        .project-meta span {
+            display: block;
+            color: var(--orange-dark);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .project-meta strong {
+            display: block;
+            margin-top: 4px;
+            color: var(--ink);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.05rem;
+            line-height: 1.2;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .project-tags span {
+            padding: 8px 11px;
+            color: #4a4050;
+            border: 1px solid rgba(255, 104, 26, 0.15);
+            border-radius: 999px;
+            background: rgba(255, 226, 201, 0.38);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .media-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            background: rgba(6, 8, 12, 0.92);
+        }
+
+        .media-modal.is-open {
+            display: flex;
+        }
+
+        .media-modal__dialog {
+            position: relative;
+            width: min(1180px, 100%);
+            max-height: calc(100vh - 56px);
+        }
+
+        .media-modal__stage {
+            display: grid;
+            place-items: center;
+            min-height: min(76vh, 760px);
+            border-radius: 18px;
+            background: #05070b;
+            overflow: hidden;
+        }
+
+        .media-modal__stage img,
+        .media-modal__stage video {
+            display: block;
+            max-width: 100%;
+            max-height: calc(100vh - 132px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .media-modal__close {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 50%;
+            background: var(--orange);
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .media-modal__caption {
+            margin-top: 14px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 991px) {
+            .project-feature,
+            .project-feature:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .project-feature:nth-child(even) .project-media-grid,
+            .project-feature:nth-child(even) .project-detail {
+                order: initial;
+            }
+        }
+
         @media (max-width: 640px) {
             .hero-section {
                 background-position: 58% top;
+            }
+
+            .project-feature {
+                padding: 16px;
+            }
+
+            .project-media-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: none;
+                min-height: 0;
+            }
+
+            .project-media-button:first-child {
+                grid-row: auto;
+            }
+
+            .project-media-button {
+                aspect-ratio: 1.32 / 1;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .media-modal {
+                padding: 14px;
+            }
+
+            .media-modal__close {
+                top: 8px;
+                right: 8px;
             }
         }
     </style>
@@ -49,7 +316,7 @@
                     <p class="intro-kicker">Hello, I'm</p>
                     <h1>Louis <span>Cosentini</span></h1>
                     <p class="hero-role">Electrical Engineering Student at UCF</p>
-                    <p class="hero-summary">I work on cricuit design, PCB design and assembly, amp& embedded systems. I have a focused interest on medical device engineering.</p>
+                    <p class="hero-summary">I work on circuit design, PCB design and assembly, and embedded systems. I have a focused interest in medical device engineering.</p>
                     <div class="hero-actions">
                         <a class="primary-button" href="#projects">View My Projects <span aria-hidden="true">&#8594;</span></a>
                         <a class="secondary-button" href="mailto:louiscosentini@gmail.com"><span aria-hidden="true">&#9993;</span> Contact Me</a>
@@ -85,33 +352,101 @@
             <div class="page-shell">
                 <div class="section-heading">
                     <p class="eyebrow">Featured Work</p>
-                    <h2>Projects That Show The Process</h2>
-                    <p>A focused selection of technical work across design, prototyping, coding, and system integration.</p>
+                    <h2>Individual Project Builds</h2>
+                    <p>Selected projects with room for build photos, short clips, process notes, and engineering outcomes.</p>
                 </div>
 
-                <div class="project-grid">
-                    <article class="project-card">
-                        <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Close-up of a printed circuit board">
-                        <div class="project-content">
-                            <p class="project-tag">Hardware</p>
-                            <h3>Embedded Systems</h3>
-                            <p>Microcontroller-based builds with attention to power, signals, and clean documentation.</p>
+                <div class="project-showcase">
+                    <article class="project-feature">
+                        <div class="project-media-grid" aria-label="PCB design media gallery">
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="PCB layout and component detail">
+                                <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Close-up of a printed circuit board">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Circuit traces and soldered electronics">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electronic components and circuit traces">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Bench testing setup for a hardware prototype">
+                                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering workstation with electronics equipment">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                        </div>
+                        <div class="project-detail">
+                            <p class="eyebrow">Project 01</p>
+                            <h3>PCB Design &amp; Assembly</h3>
+                            <p>A board-level design project focused on translating requirements into a clean schematic, organized layout, and assembled prototype that can be tested at the bench.</p>
+                            <div class="project-meta">
+                                <div><span>Focus</span><strong>Layout, routing, assembly</strong></div>
+                                <div><span>Status</span><strong>Ready for details</strong></div>
+                            </div>
+                            <div class="project-tags" aria-label="Project skills">
+                                <span>PCB Design</span>
+                                <span>Soldering</span>
+                                <span>Bench Testing</span>
+                            </div>
                         </div>
                     </article>
-                    <article class="project-card">
-                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering workstation with equipment">
-                        <div class="project-content">
-                            <p class="project-tag">Design</p>
-                            <h3>Engineering Prototypes</h3>
-                            <p>Concept-to-test workflows for class projects, personal experiments, and functional demos.</p>
+
+                    <article class="project-feature">
+                        <div class="project-media-grid" aria-label="Embedded systems media gallery">
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Embedded system prototype on a lab bench">
+                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Prototype electronics on a lab bench">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Software and firmware development workspace">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Laptop showing software work">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Measurement and testing equipment">
+                                <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering measurement equipment">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                        </div>
+                        <div class="project-detail">
+                            <p class="eyebrow">Project 02</p>
+                            <h3>Embedded Control Prototype</h3>
+                            <p>A microcontroller-centered build for capturing sensor data, controlling outputs, and validating behavior through firmware tests and repeatable measurements.</p>
+                            <div class="project-meta">
+                                <div><span>Focus</span><strong>Firmware and sensing</strong></div>
+                                <div><span>Status</span><strong>Prototype workflow</strong></div>
+                            </div>
+                            <div class="project-tags" aria-label="Project skills">
+                                <span>Microcontrollers</span>
+                                <span>C / C++</span>
+                                <span>Data Capture</span>
+                            </div>
                         </div>
                     </article>
-                    <article class="project-card">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Electronic components and circuit traces">
-                        <div class="project-content">
-                            <p class="project-tag">Software</p>
-                            <h3>Technical Tools</h3>
-                            <p>Code-driven utilities and interfaces that make analysis, testing, and presentation clearer.</p>
+
+                    <article class="project-feature">
+                        <div class="project-media-grid" aria-label="Medical device concept media gallery">
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1581093458791-9d42e122d0f8?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Medical electronics concept and testing workspace">
+                                <img src="https://images.unsplash.com/photo-1581093458791-9d42e122d0f8?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Technical prototype and documentation workspace">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Clinical and biomedical engineering context">
+                                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Biomedical research equipment">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                            <button class="project-media-button" type="button" data-media-type="image" data-full="https://images.unsplash.com/photo-1583912267550-d44c451e6ddc?auto=format&amp;fit=crop&amp;w=1800&amp;q=90" data-caption="Technical analysis and design documentation">
+                                <img src="https://images.unsplash.com/photo-1583912267550-d44c451e6ddc?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering notes and design documentation">
+                                <span class="media-action">Fullscreen</span>
+                            </button>
+                        </div>
+                        <div class="project-detail">
+                            <p class="eyebrow">Project 03</p>
+                            <h3>Medical Device Concept</h3>
+                            <p>A portfolio-ready project slot for medical device engineering work, including design constraints, electrical safety considerations, user needs, and prototype media.</p>
+                            <div class="project-meta">
+                                <div><span>Focus</span><strong>Biomedical systems</strong></div>
+                                <div><span>Status</span><strong>Concept case study</strong></div>
+                            </div>
+                            <div class="project-tags" aria-label="Project skills">
+                                <span>Medical Devices</span>
+                                <span>Requirements</span>
+                                <span>Systems Thinking</span>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -163,5 +498,78 @@
             </div>
         </section>
     </main>
+
+    <div class="media-modal" id="mediaModal" role="dialog" aria-modal="true" aria-label="Fullscreen project media" aria-hidden="true">
+        <div class="media-modal__dialog">
+            <button class="media-modal__close" type="button" aria-label="Close fullscreen media">&times;</button>
+            <div class="media-modal__stage" id="mediaModalStage"></div>
+            <p class="media-modal__caption" id="mediaModalCaption"></p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var modal = document.getElementById('mediaModal');
+            var stage = document.getElementById('mediaModalStage');
+            var caption = document.getElementById('mediaModalCaption');
+            var closeButton = modal.querySelector('.media-modal__close');
+
+            function closeModal() {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+                stage.innerHTML = '';
+                caption.textContent = '';
+            }
+
+            function openModal(button) {
+                var mediaType = button.getAttribute('data-media-type');
+                var source = button.getAttribute('data-full');
+                var label = button.getAttribute('data-caption') || 'Project media';
+                var media;
+
+                stage.innerHTML = '';
+
+                if (mediaType === 'video') {
+                    media = document.createElement('video');
+                    media.src = source;
+                    media.controls = true;
+                    media.autoplay = true;
+                    media.playsInline = true;
+                } else {
+                    media = document.createElement('img');
+                    media.src = source;
+                    media.alt = label;
+                }
+
+                stage.appendChild(media);
+                caption.textContent = label;
+                modal.classList.add('is-open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+                closeButton.focus();
+            }
+
+            document.querySelectorAll('.project-media-button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    openModal(button);
+                });
+            });
+
+            closeButton.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+        }());
+    </script>
 </body>
 </html>
