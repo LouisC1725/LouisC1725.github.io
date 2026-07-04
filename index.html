@@ -14,6 +14,7 @@
     <title>Louis Cosentini Portfolio</title>
     <script>$(function(){$("#header").load("header.html");});</script>
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/experience.css" rel="stylesheet">
     <style>
         .hero-section {
             background: #fff8f1 url("assets/hero-circuit-background.svg") center top / cover no-repeat;
@@ -482,9 +483,90 @@
 
         <section class="section-block experience-section" id="experience">
             <div class="page-shell experience-panel">
-                <p class="eyebrow">Experience</p>
-                <h2>Built around projects, iteration, and communication.</h2>
-                <p>Use this space for internships, research, coursework, lab work, and independent builds. The structure is ready for real project links as the portfolio grows.</p>
+                <div class="experience-intro">
+                    <div>
+                        <p class="eyebrow">Professional Experience</p>
+                        <h2>Engineering work shaped by labs, research, and hands-on delivery.</h2>
+                    </div>
+                    <div class="experience-intro-copy">
+                        <p>My professional experience sits at the intersection of electrical engineering, prototyping, and medical technology. I am most interested in work where hardware, software, and human needs have to meet cleanly: building something that can be tested, explained, improved, and eventually trusted.</p>
+                        <p>Across research, project teams, and technical coursework, I have focused on turning open-ended problems into concrete engineering progress: documenting requirements, building prototypes, validating behavior, and communicating tradeoffs with both technical and non-technical teammates.</p>
+                    </div>
+                </div>
+
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-media" aria-label="Medical robotics research images">
+                            <img src="/assets/Med.png" alt="Louis presenting medical robotics research with teammates">
+                            <img src="/assets/MedRobotSim.png" alt="Robotic arm simulation for ultrasonic scanning research">
+                        </div>
+                        <div class="experience-content">
+                            <span class="experience-date">Research &amp; Development</span>
+                            <h3>Medical Robotics Research</h3>
+                            <p class="experience-role">Robotic ultrasonic scanner concept and validation workflow</p>
+                            <p>Contributed to a medical-device-focused robotics effort involving scan path capture, simulation, and prototype communication. The work emphasized reliable system behavior, clear demonstrations, and collaboration across electrical, mechanical, and software concerns.</p>
+                            <ul class="experience-highlights">
+                                <li>Integrated robotics concepts with medical imaging goals and practical prototype constraints.</li>
+                                <li>Used simulation and visual demonstrations to communicate system behavior before physical iteration.</li>
+                                <li>Translated technical progress into presentation material for group review and feedback.</li>
+                            </ul>
+                            <div class="experience-tags" aria-label="Experience skills">
+                                <span>Medical Devices</span>
+                                <span>Robotics</span>
+                                <span>ROS2</span>
+                                <span>Technical Presentation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-media" aria-label="Electronics prototyping images">
+                            <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Close-up of PCB layout and electronic components">
+                            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Engineering bench with testing equipment">
+                        </div>
+                        <div class="experience-content">
+                            <span class="experience-date">Hardware Practice</span>
+                            <h3>PCB Design &amp; Bench Prototyping</h3>
+                            <p class="experience-role">Board-level design, assembly planning, and electrical validation</p>
+                            <p>Built experience moving from circuit intent to physical implementation. This includes schematic organization, layout decisions, assembly considerations, and bench testing habits that make hardware easier to debug and explain.</p>
+                            <ul class="experience-highlights">
+                                <li>Organized circuit requirements into layouts that support assembly, inspection, and testing.</li>
+                                <li>Practiced iterative bring-up with measurement-driven debugging and documentation.</li>
+                                <li>Balanced compact hardware design with readability, reliability, and future modification.</li>
+                            </ul>
+                            <div class="experience-tags" aria-label="Experience skills">
+                                <span>PCB Layout</span>
+                                <span>Soldering</span>
+                                <span>Circuit Analysis</span>
+                                <span>Bench Testing</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-media" aria-label="Embedded systems development images">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Embedded electronics prototype on a workbench">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Laptop used for software and firmware development">
+                        </div>
+                        <div class="experience-content">
+                            <span class="experience-date">Embedded Systems</span>
+                            <h3>Firmware, Sensing &amp; Data Workflows</h3>
+                            <p class="experience-role">Microcontroller-centered projects and repeatable test methods</p>
+                            <p>Worked on embedded workflows that connect sensors, firmware, and measured outputs. The focus is not just making a prototype respond once, but creating a repeatable path for testing, capturing data, and improving behavior from evidence.</p>
+                            <ul class="experience-highlights">
+                                <li>Developed comfort with C/C++, Python, sensor interfaces, and microcontroller debugging.</li>
+                                <li>Created test loops that connect firmware behavior to observed electrical or data outputs.</li>
+                                <li>Used documentation and structured iteration to keep project decisions traceable.</li>
+                            </ul>
+                            <div class="experience-tags" aria-label="Experience skills">
+                                <span>Microcontrollers</span>
+                                <span>C / C++</span>
+                                <span>Python</span>
+                                <span>Data Capture</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
