@@ -11,6 +11,11 @@
     box-shadow: none;
 }
 
+.experience-panel p:last-child {
+    max-width: none;
+    margin-top: 0;
+}
+
 .experience-intro {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
