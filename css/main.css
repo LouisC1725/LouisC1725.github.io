@@ -490,6 +490,22 @@ a:hover {
     gap: 14px;
 }
 
+.skill-grid::after {
+    content: "Certified: Altium • Autodesk Inventor • Excel • PowerPoint • Word";
+    grid-column: 1 / -1;
+    display: block;
+    margin-top: 12px;
+    padding: 15px 18px;
+    color: #28445c;
+    border: 1px solid rgba(76, 145, 176, 0.25);
+    border-radius: 14px;
+    background: rgba(209, 238, 245, 0.76);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(48, 91, 112, 0.08);
+}
+
 .skill-pill {
     display: grid;
     place-items: center;
@@ -656,6 +672,11 @@ a:hover {
 
     .skill-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-grid::after {
+        font-size: 0.88rem;
+        line-height: 1.6;
     }
 
     .experience-panel,
