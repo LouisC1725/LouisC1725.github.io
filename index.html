@@ -187,6 +187,34 @@
             font-weight: 700;
         }
 
+        .skill-grid::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        .certified-skills-label {
+            margin: 22px 0 12px;
+            color: var(--orange-dark);
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .certified-skill-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .certified-skill-grid .skill-pill {
+            color: #5a2f12;
+            border-color: rgba(255, 104, 26, 0.34);
+            background: rgba(255, 197, 145, 0.68);
+            box-shadow: 0 10px 24px rgba(255, 104, 26, 0.12);
+        }
+
         .media-modal {
             position: fixed;
             inset: 0;
@@ -266,6 +294,10 @@
             .project-feature:nth-child(even) .project-detail {
                 order: initial;
             }
+
+            .certified-skill-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 640px) {
@@ -293,6 +325,15 @@
 
             .project-meta {
                 grid-template-columns: 1fr;
+            }
+
+            .certified-skill-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .certified-skills-label {
+                font-size: 0.82rem;
+                letter-spacing: 0.12em;
             }
 
             .media-modal {
@@ -566,6 +607,14 @@
                     <div class="skill-pill">C / C++</div>
                     <div class="skill-pill">Data Analysis</div>
                     <div class="skill-pill">Technical Writing</div>
+                </div>
+                <p class="certified-skills-label">Certified Skills</p>
+                <div class="certified-skill-grid" aria-label="Certified skills">
+                    <div class="skill-pill certified-skill-pill">Altium</div>
+                    <div class="skill-pill certified-skill-pill">Autodesk Inventor</div>
+                    <div class="skill-pill certified-skill-pill">Excel</div>
+                    <div class="skill-pill certified-skill-pill">PowerPoint</div>
+                    <div class="skill-pill certified-skill-pill">Word</div>
                 </div>
             </div>
         </section>
