@@ -118,6 +118,50 @@
             backdrop-filter: blur(10px);
         }
 
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 14px;
+        }
+
+        .linkedin-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 52px;
+            padding: 0 24px;
+            color: #fffaf5;
+            border: 1px solid rgba(255, 255, 255, 0.26);
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ffbd7a, #ff8f45);
+            box-shadow: 0 14px 28px rgba(255, 143, 69, 0.22);
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .linkedin-button:hover {
+            color: #fffaf5;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .linkedin-logo {
+            display: inline-grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            color: #fffaf5;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.18);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
         .project-detail {
             display: flex;
             flex-direction: column;
@@ -343,6 +387,10 @@
             .media-modal__close {
                 top: 8px;
                 right: 8px;
+            }
+
+            .contact-actions {
+                justify-content: flex-start;
             }
         }
     </style>
@@ -579,7 +627,10 @@
                     <p class="eyebrow">Contact</p>
                     <h2>Let's build the next version.</h2>
                 </div>
-                <a class="primary-button" href="mailto:louiscosentini@gmail.com">Email Louis <span aria-hidden="true">&#8594;</span></a>
+                <div class="contact-actions">
+                    <a class="linkedin-button" href="https://www.linkedin.com/in/louis-cosentini/" target="_blank" rel="noopener noreferrer"><span class="linkedin-logo" aria-hidden="true">in</span> LinkedIn</a>
+                    <a class="primary-button" href="mailto:louiscosentini@gmail.com">Email Louis <span aria-hidden="true">&#8594;</span></a>
+                </div>
             </div>
         </section>
     </main>
