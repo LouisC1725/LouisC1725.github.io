@@ -96,7 +96,7 @@ a:hover {
     line-height: 1;
 }
 
-brand-name {
+.brand-name {
     display: block;
     font-size: 1.55rem;
     font-weight: 700;
@@ -256,7 +256,7 @@ brand-name {
     text-transform: uppercase;
 }
 
-hero-summary {
+.hero-summary {
     max-width: 560px;
     margin-top: 24px;
     color: #42475a;
