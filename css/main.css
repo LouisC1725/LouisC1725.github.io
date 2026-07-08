@@ -489,6 +489,12 @@ a:hover {
     color: var(--ink);
 }
 
+.skills-section .certified-skills-label {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
 .compact-heading {
     margin-bottom: 26px;
 }
