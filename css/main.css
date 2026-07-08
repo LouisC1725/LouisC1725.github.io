@@ -480,6 +480,15 @@ a:hover {
     background: rgba(255, 226, 201, 0.28);
 }
 
+.skills-section .eyebrow,
+.skills-section .certified-skills-label {
+    color: var(--orange-dark) !important;
+}
+
+.skills-section .section-heading h2 {
+    color: var(--ink);
+}
+
 .compact-heading {
     margin-bottom: 26px;
 }
@@ -491,7 +500,7 @@ a:hover {
 }
 
 .skill-grid::after {
-    content: "Certified: Altium • Autodesk Inventor • Excel • PowerPoint • Word";
+    content: "Certified: Altium â€¢ Autodesk Inventor â€¢ Excel â€¢ PowerPoint â€¢ Word";
     grid-column: 1 / -1;
     display: block;
     margin-top: 12px;
