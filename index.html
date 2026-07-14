@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0w1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <title>Louis Cosentini Portfolio</title>
@@ -59,6 +59,64 @@
 
         .project-feature:nth-child(even) .project-detail {
             order: 1;
+        }
+
+        .project-feature.is-collapsed {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .project-feature.is-collapsed .project-media-grid,
+        .project-feature.is-collapsed .project-description,
+        .project-feature.is-collapsed .project-meta,
+        .project-feature.is-collapsed .project-tags {
+            display: none;
+        }
+
+        .project-feature.is-collapsed .project-detail {
+            order: initial;
+            padding: 8px;
+        }
+
+        .project-feature.is-collapsed .project-detail h3 {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .project-toggle {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 0 15px;
+            color: var(--orange-dark);
+            border: 1px solid rgba(255, 104, 26, 0.22);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.74);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.92rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 10px 22px rgba(84, 52, 26, 0.07);
+            transition: transform 160ms ease, background 160ms ease;
+        }
+
+        .project-toggle:hover,
+        .project-toggle:focus {
+            background: rgba(255, 226, 201, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .project-toggle__icon {
+            font-size: 1.2rem;
+            line-height: 1;
         }
 
         .project-media-grid {
@@ -246,6 +304,15 @@
             text-transform: uppercase;
         }
 
+        .skills-section .eyebrow,
+        .skills-section .certified-skills-label {
+            color: var(--orange-dark);
+        }
+
+        .skills-section .section-heading h2 {
+            color: var(--ink);
+        }
+
         .certified-skill-grid {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -371,6 +438,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .project-header {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .project-toggle {
+                width: 100%;
+            }
+
             .certified-skill-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -426,12 +502,12 @@
                         <div class="stat-item">
                             <span class="stat-icon">&#10042;</span>
                             <strong>3+</strong>
-                            <span>Years in Leadership Positions</span>
+                            <span>Core Skill Areas</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-icon">&#8962;</span>
                             <strong>B.S.</strong>
-                            <span>Electrical Engineering</span>
+                            <span>Engineering Focus</span>
                         </div>
                     </div>
                 </div>
@@ -516,9 +592,17 @@
                             </button>
                         </div>
                         <div class="project-detail">
-                            <p class="eyebrow">Project 01</p>
-                            <h3>Guitar Effects Pedals</h3>
-                            <p>This project focused on creating different effects for guitars, spanning different designs and effects over several years. The first design was a simple distortion that was simulated in LTSpice and breadboarded using discrete Op-amps. The next year, a muli-effect pedal was created using an STM MCU with DSP algorithms written in C++ in addition to rotary encoder controls. The most recent year has been primarily teaching new students how to make their own distortion pedals using LTSpice for simulation and KiCad for PCB design. </p>
+                            <div class="project-header">
+                                <div>
+                                    <p class="eyebrow">Project 01</p>
+                                    <h3>Guitar Effects Pedals</h3>
+                                </div>
+                                <button class="project-toggle" type="button" aria-expanded="true">
+                                    <span class="project-toggle__text">Close</span>
+                                    <span class="project-toggle__icon" aria-hidden="true">&minus;</span>
+                                </button>
+                            </div>
+                            <p class="project-description">This project focused on creating different effects for guitars, spanning different designs and effects over several years. The first design was a simple distortion that was simulated in LTSpice and breadboarded using discrete Op-amps. The next year, a muli-effect pedal was created using an STM MCU with DSP algorithms written in C++ in addition to rotary encoder controls. The most recent year has been primarily teaching new students how to make their own distortion pedals using LTSpice for simulation and KiCad for PCB design. </p>
                             <div class="project-meta">
                                 <div><span>Focus</span><strong>Design, Simulation, Programming, amp& Assembly</strong></div>
                                 <div><span>Time</span><strong>2023-Present</strong></div>
@@ -547,9 +631,17 @@
                             </button>
                         </div>
                         <div class="project-detail">
-                            <p class="eyebrow">Project 02</p>
-                            <h3>Sole Pressure Sensor</h3>
-                            <p>A 16x16 pressure sensing array designed for individuals with periphal nerve damage. Designed using a custom, pressure sensitive material, with outputs multiplexed into an Arduino. Outputs were processed and visualized with Excel.</p>
+                            <div class="project-header">
+                                <div>
+                                    <p class="eyebrow">Project 02</p>
+                                    <h3>Sole Pressure Sensor</h3>
+                                </div>
+                                <button class="project-toggle" type="button" aria-expanded="true">
+                                    <span class="project-toggle__text">Close</span>
+                                    <span class="project-toggle__icon" aria-hidden="true">&minus;</span>
+                                </button>
+                            </div>
+                            <p class="project-description">A 16x16 pressure sensing array designed for individuals with periphal nerve damage. Designed using a custom, pressure sensitive material, with outputs multiplexed into an Arduino. Outputs were processed and visualized with Excel.</p>
                             <div class="project-meta">
                                 <div><span>Focus</span><strong>Firmware, circuit design, and sensing</strong></div>
                                 <div><span>Time</span><strong>2024-25</strong></div>
@@ -578,9 +670,17 @@
                             </button>
                         </div>
                         <div class="project-detail">
-                            <p class="eyebrow">Project 03</p>
-                            <h3>Robotic Ultrasonic Scanner</h3>
-                            <p></p>
+                            <div class="project-header">
+                                <div>
+                                    <p class="eyebrow">Project 03</p>
+                                    <h3>Robotic Ultrasonic Scanner</h3>
+                                </div>
+                                <button class="project-toggle" type="button" aria-expanded="true">
+                                    <span class="project-toggle__text">Close</span>
+                                    <span class="project-toggle__icon" aria-hidden="true">&minus;</span>
+                                </button>
+                            </div>
+                            <p class="project-description"></p>
                             <div class="project-meta">
                                 <div><span>Focus</span><strong>Medical Devices</strong></div>
                                 <div><span>Time</span><strong>March - May 2026</strong></div>
@@ -603,11 +703,10 @@
                     <h2>Technical Skills</h2>
                 </div>
                 <div class="skill-grid">
-                    <div class="skill-pill">Circuit Design</div>
+                    <div class="skill-pill">Circuit Analysis</div>
                     <div class="skill-pill">Prototyping</div>
-                    <div class="skill-pill">PCBA Design</div>
-                    <div class="skill-pill">C / C++</div>
                     <div class="skill-pill">Python</div>
+                    <div class="skill-pill">C / C++</div>
                     <div class="skill-pill">Data Analysis</div>
                     <div class="skill-pill">Technical Writing</div>
                 </div>
@@ -623,10 +722,13 @@
         </section>
 
         <section class="contact-section" id="contact">
-            <div class="page-shell contact-panReach out to me!</h2>
+            <div class="page-shell contact-panel">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let's build the next version.</h2>
                 </div>
                 <div class="contact-actions">
-                    <a class="linkedin-button" href="https://www.linkedin.com/in/louis-cosentini-15717829" target="_blank" rel="noopener noreferrer"><span class="linkedin-logo" aria-hidden="true">in</span> LinkedIn</a>
+                    <a class="linkedin-button" href="https://www.linkedin.com/in/louis-cosentini/" target="_blank" rel="noopener noreferrer"><span class="linkedin-logo" aria-hidden="true">in</span> LinkedIn</a>
                     <a class="primary-button" href="mailto:louiscosentini@gmail.com">Email Louis <span aria-hidden="true">&#8594;</span></a>
                 </div>
             </div>
@@ -642,6 +744,56 @@
     </div>
 
     <script>
+        (function () {
+            document.querySelectorAll('.project-feature').forEach(function (project, index) {
+                var toggle = project.querySelector('.project-toggle');
+                var collapsibleItems = project.querySelectorAll('.project-media-grid, .project-description, .project-meta, .project-tags');
+                var projectTitle = project.querySelector('h3');
+                var projectId = 'project-panel-' + (index + 1);
+
+                if (!toggle) {
+                    return;
+                }
+
+                collapsibleItems.forEach(function (item) {
+                    item.id = item.id || projectId + '-' + Array.prototype.indexOf.call(collapsibleItems, item);
+                });
+
+                toggle.setAttribute('aria-controls', Array.prototype.map.call(collapsibleItems, function (item) {
+                    return item.id;
+                }).join(' '));
+
+                if (projectTitle) {
+                    toggle.setAttribute('aria-label', 'Close details for ' + projectTitle.textContent);
+                }
+
+                toggle.addEventListener('click', function () {
+                    var isCollapsed = project.classList.toggle('is-collapsed');
+                    var toggleText = toggle.querySelector('.project-toggle__text');
+                    var toggleIcon = toggle.querySelector('.project-toggle__icon');
+                    var labelAction = isCollapsed ? 'Open' : 'Close';
+
+                    toggle.setAttribute('aria-expanded', String(!isCollapsed));
+
+                    collapsibleItems.forEach(function (item) {
+                        item.hidden = isCollapsed;
+                    });
+
+                    if (toggleText) {
+                        toggleText.textContent = labelAction;
+                    }
+
+                    if (toggleIcon) {
+                        toggleIcon.textContent = isCollapsed ? '+' : '\u2212';
+                    }
+
+                    if (projectTitle) {
+                        toggle.setAttribute('aria-label', labelAction + ' details for ' + projectTitle.textContent);
+                    }
+                });
+            });
+        }());
+
         (function () {
             var modal = document.getElementById('mediaModal');
             var stage = document.getElementById('mediaModalStage');
